@@ -1,0 +1,106 @@
+{
+    "name": "sbuerk/tf-basics-project",
+    "description": "TYPO3 Demo Project to demonstrate basic testing integration",
+    "license": "GPL-2.0-or-later",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Stefan Bürk",
+            "email": "stefan@buerk.tech"
+        }
+    ],
+    "require": {
+        "internal/custom-command": "@dev",
+        "internal/custom-middleware": "@dev",
+        "typo3/cms-adminpanel": "13.2.*@dev",
+        "typo3/cms-backend": "13.2.*@dev",
+        "typo3/cms-belog": "13.2.*@dev",
+        "typo3/cms-beuser": "13.2.*@dev",
+        "typo3/cms-core": "13.2.*@dev",
+        "typo3/cms-dashboard": "13.2.*@dev",
+        "typo3/cms-extbase": "13.2.*@dev",
+        "typo3/cms-extensionmanager": "13.2.*@dev",
+        "typo3/cms-filelist": "13.2.*@dev",
+        "typo3/cms-fluid": "13.2.*@dev",
+        "typo3/cms-fluid-styled-content": "13.2.*@dev",
+        "typo3/cms-form": "13.2.*@dev",
+        "typo3/cms-frontend": "13.2.*@dev",
+        "typo3/cms-info": "13.2.*@dev",
+        "typo3/cms-install": "13.2.*@dev",
+        "typo3/cms-lowlevel": "13.2.*@dev",
+        "typo3/cms-opendocs": "13.2.*@dev",
+        "typo3/cms-recycler": "13.2.*@dev",
+        "typo3/cms-redirects": "13.2.*@dev",
+        "typo3/cms-reports": "13.2.*@dev",
+        "typo3/cms-rte-ckeditor": "13.2.*@dev",
+        "typo3/cms-scheduler": "13.2.*@dev",
+        "typo3/cms-seo": "13.2.*@dev",
+        "typo3/cms-setup": "13.2.*@dev",
+        "typo3/cms-styleguide": "13.2.*@dev",
+        "typo3/cms-tstemplate": "13.2.*@dev",
+        "typo3/cms-viewpage": "13.2.*@dev",
+        "typo3/cms-workspaces": "13.2.*@dev",
+        "php": "^8.2 || ^8.3",
+        "typo3/cms-felogin": "13.2.*@dev",
+        "vaimo/composer-patches": "^5.2"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42",
+        "phpunit/phpunit": "dev-main",
+        "typo3/testing-framework": "dev-main",
+        "fes/composer-repo-builder": "@dev",
+        "composer/composer": "^2.7",
+        "fes/composer-system-builder": "@dev"
+    },
+    "repositories": {
+        "packages": {
+            "type": "path",
+            "url": "packages-dev/*"
+        },
+        "extensions": {
+            "type": "path",
+            "url": "packages/*"
+        },
+        "phpunit-fork": {
+            "type": "vcs",
+            "url": "git@github.com:sbuerk/phpunit.git"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SBUERK\\TfBasicsProject\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "fes/composer-repo-builder": true,
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true,
+            "vaimo/composer-patches": true
+        },
+        "preferred-install": {
+            "typo3/cms-*": "source",
+            "typo3/testing-framework": "source",
+            "phpunit/phpunit": "source"
+        }
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "fes/composer-repo": {
+            "repo-dir": ".mono",
+            "apps-dir": "Tests/Instances/*",
+            "zip-packages": [
+                "typo3/cms-core"
+            ]
+        },
+        "patcher": {
+            "search": "patches",
+            "sources": {
+                "project": true,
+                "vendors": false,
+                "packages": true
+            }
+        }
+    }
+}

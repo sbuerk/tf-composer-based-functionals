@@ -1,0 +1,19 @@
+{
+  "name": "fes/composer-repo-builder",
+  "type": "composer-plugin",
+  "description": "Creates a local Composer repository with ZIP files of all installed packages",
+  "extra": {
+    "class": "FES\\ComposerRepoBuilder\\RepoBuilderPlugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "FES\\ComposerRepoBuilder\\": "src/"
+    }
+  },
+  "require": {
+    "composer-plugin-api": "^2.1.0"
+  },
+  "require-dev": {
+    "composer/composer": "^2.6"
+  }
+}

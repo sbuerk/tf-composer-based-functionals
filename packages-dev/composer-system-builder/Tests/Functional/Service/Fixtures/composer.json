@@ -1,0 +1,18 @@
+{
+  "name": "fes-test-instances/composer-system-builder-test",
+  "type": "project",
+  "require": {
+    "typo3/cms-core": "*",
+    "typo3/cms-frontend": "*"
+  },
+  "require-dev": {
+    "fes/functional-test-system": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "helhum/typo3-console-plugin": true
+    }
+  }
+}

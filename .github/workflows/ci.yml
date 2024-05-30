@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-tests:
+    name: unit-tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - php-version: '8.2'
+          - php-version: '8.3'
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Install composer dependencies ${{ matrix.php-version }}"
+        run: |
+          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s composer -- install
+
+      - name: "Unit tests with php${{ matrix.php-version }}"
+        run: |
+          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -s unit
+
+  functional-tests:
+    name: functional-tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['8.2', '8.3']
+        database: ['sqlite', 'mysql', 'mariadb', 'postgres']
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Install composer dependencies ${{ matrix.php-version }}"
+        run: |
+          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -d ${{ matrix.database }} -s composer -- install
+
+      - name: "Functional with php${{ matrix.php-version }} mysql"
+        run: |
+          Build/Scripts/runTests.sh -p ${{ matrix.php-version }} -d ${{ matrix.database }} -s functional
+          
+          

@@ -1,0 +1,7 @@
+{
+  "name": "fes-test-instances/composer-system-builder-test",
+  "type": "project",
+  "require": {
+    "fes/composer-system-builder": "*"
+  }
+}
