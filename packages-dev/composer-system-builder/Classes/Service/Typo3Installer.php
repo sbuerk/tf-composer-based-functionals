@@ -48,7 +48,7 @@ final class Typo3Installer
         $connectionParametersArray = $connectionParameters->toArray();
         unset($connectionParametersArray['dbname']);
         $connection = DriverManager::getConnection($connectionParametersArray);
-        $schemaManager = $connection->getSchemaManager();
+        $schemaManager = $connection->createSchemaManager();
         $databases = $schemaManager->listDatabases();
 
         $databaseName = $connectionParameters->getName();
