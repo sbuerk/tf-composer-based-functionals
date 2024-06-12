@@ -12,7 +12,7 @@ use SebastianBergmann\Environment\Runtime;
 /**
  * Copied from {@see DefaultJobRunner} and adjusted to use the specified working directory.
  */
-final readonly class WorkingDirectoryAwareJobRunner implements JobRunner
+final class WorkingDirectoryAwareJobRunner implements JobRunner
 {
     private string $workingDirectory;
 

@@ -6,6 +6,7 @@ namespace FES\ComposerSystemBuilder\Service;
 use FES\ComposerSystemBuilder\DatabaseConnectionParameters;
 use TYPO3\CMS\Core\Cache\Backend\NullBackend;
 use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\TestingFramework\Composer\ComposerPackageManager;
 
 /**
  * @phpstan-type TLocalConfigurationKey 'BE'|'DB'|'EXTCONF'|'EXTENSIONS'|'FE'|'GFX'|'MAIL'|'SYS'
@@ -13,6 +14,13 @@ use TYPO3\CMS\Core\Core\Environment;
  */
 class SystemConfigurationFactory
 {
+    private ComposerPackageManager $composerPackageManager;
+
+    public function __construct()
+    {
+        $this->composerPackageManager = new ComposerPackageManager();
+    }
+
     /**
      * The default config to use; {@see \Nimut\TestingFramework\TestSystem\AbstractTestSystem::$defaultConfiguration}
      * @var array<string, mixed>
@@ -43,7 +51,9 @@ class SystemConfigurationFactory
      */
     public function getLocalConfiguration(DatabaseConnectionParameters $connectionParameters): array
     {
-        $finalConfigurationArray = require Environment::getPublicPath() . '/typo3/sysext/core/Configuration/FactoryConfiguration.php';
+        // Base of final LocalConfiguration is core factory configuration
+        $coreExtensionPath = $this->composerPackageManager->getPackageInfo('typo3/cms-core')?->getRealPath() ?? '';
+        $finalConfigurationArray = require $coreExtensionPath . '/Configuration/FactoryConfiguration.php';
         $finalConfigurationArray['DB'] = [
             'Connections' => [
                 'Default' => $this->buildDatabaseConfiguration($connectionParameters),

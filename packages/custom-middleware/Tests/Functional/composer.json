@@ -1,0 +1,10 @@
+{
+  "name": "internal-tests/custom-middleware-test",
+  "type": "project",
+  "require": {
+    "internal/custom-middleware": "*"
+  },
+  "config": {
+    "allow-plugins": true
+  }
+}

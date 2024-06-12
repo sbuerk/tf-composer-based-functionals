@@ -42,10 +42,7 @@ abstract class ComposerizedTestCase extends FunctionalTestCase
      */
     private function getTestSystem(): TestSystem
     {
-        $testSystemPath = getenv('TEST_SYSTEM_PATH');
-        if (!is_string($testSystemPath) || !file_exists($testSystemPath)) {
-            throw new \RuntimeException('Could not get test system path from environment', 1713272089);
-        }
+        $testSystemPath = getcwd();
 
         return new TestSystem($testSystemPath, DatabaseConnectionParameters::empty());
     }
