@@ -40,6 +40,7 @@
         "typo3/cms-tstemplate": "13.2.*@dev",
         "typo3/cms-viewpage": "13.2.*@dev",
         "typo3/cms-workspaces": "13.2.*@dev",
+        "typo3/minimal": "^13.1",
         "php": "^8.2 || ^8.3",
         "typo3/cms-felogin": "13.2.*@dev",
         "vaimo/composer-patches": "^5.2"

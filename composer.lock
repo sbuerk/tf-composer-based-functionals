@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a12fac2e5d85624386d67b7bbf730b6",
+    "content-hash": "f3024a846150c72b19ba08313745c118",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1187,10 +1187,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/custom-middleware",
-                "reference": "f1f08945e9eb302564f02c2df850facd5cfcfaf3"
+                "reference": "fe4de975f5d63752080bcd9300b87f1bb0df67c7"
             },
             "require": {
                 "php": "^8.1 || ^8.2 || ^8.3",
+                "typo3/cms-backend": "^12.4 || 12.*.*@dev || 13.*.*@dev",
                 "typo3/cms-core": "^12.4 || 12.*.*@dev || 13.*.*@dev",
                 "typo3/cms-frontend": "^12.4 || 12.*.*@dev || 13.*.*@dev"
             },
@@ -7405,6 +7406,55 @@
                 "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.1.4"
             },
             "time": "2023-11-14T07:41:08+00:00"
+        },
+        {
+            "name": "typo3/minimal",
+            "version": "v13.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/minimal.git",
+                "reference": "545a05309ac8c9ddc0468e8a84f610282ab4da89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/minimal/zipball/545a05309ac8c9ddc0468e8a84f610282ab4da89",
+                "reference": "545a05309ac8c9ddc0468e8a84f610282ab4da89",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-backend": "^13.1",
+                "typo3/cms-core": "^13.1",
+                "typo3/cms-extbase": "^13.1",
+                "typo3/cms-filelist": "^13.1",
+                "typo3/cms-fluid": "^13.1",
+                "typo3/cms-frontend": "^13.1"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 CMS Core Team",
+                    "homepage": "https://forge.typo3.org/projects/typo3cms-core",
+                    "role": "Developer"
+                },
+                {
+                    "name": "The TYPO3 Community",
+                    "homepage": "https://typo3.org/community/",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Minimal required set of TYPO3 extensions",
+            "support": {
+                "general": "https://typo3.org/support/",
+                "irc": "irc://irc.freenode.net/#typo3-cms",
+                "issues": "https://forge.typo3.org",
+                "news": "nntp://lists.typo3.org",
+                "source": "https://github.com/TYPO3/minimal/tree/v13.1.0"
+            },
+            "time": "2024-04-23T10:39:40+00:00"
         },
         {
             "name": "typo3fluid/fluid",

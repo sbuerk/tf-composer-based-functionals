@@ -11,6 +11,8 @@ use Composer\Script\ScriptEvents;
 
 class RepoBuilderPlugin implements PluginInterface, EventSubscriberInterface
 {
+    private LocalRepositoryFactory $localRepositoryFactory;
+
     public static function getSubscribedEvents(): array
     {
         return [

@@ -2,7 +2,8 @@
   "name": "internal-tests/custom-middleware-test",
   "type": "project",
   "require": {
-    "internal/custom-middleware": "*"
+    "internal/custom-middleware": "*",
+    "typo3/minimal": "*"
   },
   "config": {
     "allow-plugins": true
