@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace Internal\CustomMiddleware\Tests\Functional;
 
+use FES\ComposerTestCase\ComposerizedTestCase;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
-final class DummyTest extends FunctionalTestCase
+final class DummyTest extends ComposerizedTestCase
 {
-    protected function setUp(): void
+    public function getComposerManifest(): string
     {
-        $this->testExtensionsToLoad = array_merge(
-            $this->testExtensionsToLoad,
-            [
-                'internal/custom-middleware',
-            ]
-        );
-        parent::setUp();
+        return __DIR__ . '/composer.json';
+    }
+
+    public function getTestSystemName(): string
+    {
+        return 'custom-middleware';
     }
 
     #[Test]

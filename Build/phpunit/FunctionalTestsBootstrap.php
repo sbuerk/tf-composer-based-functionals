@@ -22,7 +22,17 @@
  * This file is defined in FunctionalTests.xml and called by phpunit
  * before instantiating the test suites.
  */
+
+use FES\ComposerTestCase\ComposerSystemTestRunner;
+use FES\ComposerTestCase\WorkingDirectoryAwareJobRunner;
+use PHPUnit\Framework\IsolatedTestRunnerRegistry;
+use PHPUnit\Util\PHP\JobRunnerRegistry;
+
 (static function () {
+    $jobRunner = new WorkingDirectoryAwareJobRunner();
+    JobRunnerRegistry::set($jobRunner);
+    IsolatedTestRunnerRegistry::set(new ComposerSystemTestRunner($jobRunner));
+
     $testbase = new \TYPO3\TestingFramework\Core\Testbase();
     $testbase->defineOriginalRootPath();
     $testbase->createDirectory(ORIGINAL_ROOT . 'typo3temp/var/tests');

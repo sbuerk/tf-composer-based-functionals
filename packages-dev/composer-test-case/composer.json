@@ -1,0 +1,17 @@
+{
+  "name": "fes/composer-test-case",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "FES\\ComposerTestCase\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FES\\ComposerTestCase\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abdb1496ab54b5a7661562b30f508354",
+    "content-hash": "5a12fac2e5d85624386d67b7bbf730b6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -8845,6 +8845,29 @@
             }
         },
         {
+            "name": "fes/composer-test-case",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages-dev/composer-test-case",
+                "reference": "432e8ba1a292d22626bbae2c197945cbe316af72"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FES\\ComposerTestCase\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "FES\\ComposerTestCase\\Tests\\": "tests/"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "v5.2.13",
             "source": {
@@ -11484,7 +11507,8 @@
         "phpunit/phpunit": 20,
         "typo3/testing-framework": 20,
         "fes/composer-repo-builder": 20,
-        "fes/composer-system-builder": 20
+        "fes/composer-system-builder": 20,
+        "fes/composer-test-case": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -11492,5 +11516,5 @@
         "php": "^8.2 || ^8.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -19,7 +19,11 @@ final class DummyTest extends FunctionalTestCase
                 // 'internal/custom_middleware',
             ]
         );
-        parent::setUp();
+
+        // no call to parent because we do not want to use the FunctionalTestCase bootstrap by nimut/TF or typo3/TF
+        if (!defined('ORIGINAL_ROOT')) {
+            $this->markTestSkipped('Functional tests must be called through phpunit on CLI');
+        }
     }
 
     #[Test]

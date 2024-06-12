@@ -50,7 +50,8 @@
         "typo3/testing-framework": "dev-main",
         "fes/composer-repo-builder": "@dev",
         "composer/composer": "^2.7",
-        "fes/composer-system-builder": "@dev"
+        "fes/composer-system-builder": "@dev",
+        "fes/composer-test-case": "@dev"
     },
     "repositories": {
         "packages": {
